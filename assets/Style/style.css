@@ -1,0 +1,324 @@
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'Open Sans', sans-serif;
+}
+
+body{
+   height: 100vh;
+   background-color: #000;
+   background-image: url(../img/photo-1485470733090-0aae1788d5af.webp);
+   background-size: cover;
+   background-position: center;
+}
+
+li{
+   list-style: none;  
+}
+
+a{
+   text-decoration: none;
+   color: #fff;
+   font-size: 1rem;
+}
+
+a:hover{
+   color: orange;
+}
+
+/** Header*/
+header{
+   position: relative;
+   padding: 0 2rem;
+}
+
+.navbar{
+   width: 100%;
+   height: 60px;
+   max-width: 1200px;
+   margin: 0 auto;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.navbar .logo a {
+   font-size: 1.5rem;
+   font-weight: bold;
+}
+
+.navbar .links{
+   display: flex;
+   gap: 2rem;
+}
+
+.navbar .toggle_btn{
+   color: #fff;
+   font-size: 1.5rem;
+   cursor: pointer;
+   display: none;
+}
+
+.action_btn{
+   background-color: orange;
+   color: #fff;
+   padding: 0.5rem 1rem;
+   border: none;
+   outline: none;
+   border-radius: 20px;
+   font-size: 0.8rem;
+   font-weight: bold;
+   cursor: pointer;
+   transition: scale 0.2 ease;
+}
+
+.action_btn:hover{
+   scale: 1.05;
+   color: #fff;
+}
+
+.action_btn:active{
+   scale: 0.95;
+}
+
+
+/**Menu hamburguesa */
+
+.dropdown_menu {
+   display: none;
+   position: absolute;
+   right: 2rem;
+   top: 60pxs;
+   height: 0;
+   width: 300px;
+   background: rgba(255, 255, 255, 0.1);
+   backdrop-filter: blur(15px);
+   border-radius: 10px;
+   overflow: hidden;
+   transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown_menu.open{ 
+   height: 240px;
+}
+
+.dropdown_menu li {
+   padding: 0.7rem;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.dropdown_menu .action_btn {
+   width: 100%;
+   display: flex;
+   justify-content: center;
+}
+
+.span{
+   display: flex;
+   font-family: monospace;
+   white-space: nowrap;
+   border-right: 4px solid;
+   width: 17ch;
+
+   animation: typing 2s steps(17), blink .5s infinite step-end alternate;
+   overflow: hidden;
+   
+}
+
+@keyframes typing {
+   from { width: 0; }
+}
+
+@keyframes blink {
+   50% {border-color: transparent;}  
+}
+
+section#hero{
+   height: calc(100vh - 60px);
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   color: #fff;
+}
+
+#hero h1 {
+   font-size: 3rem;
+   margin-bottom: 1rem;
+}
+
+/** medias querys home*/
+
+@media (max-width: 992px) {
+   .navbar .links,
+   .navbar .action_btn {
+      display: none;
+   }
+
+   .navbar .toggle_btn{
+      display: block;
+   }
+
+   .dropdown_menu{
+      display: block;
+   }
+}
+
+@media (max-width: 576px){
+   .dropdown_menu {
+      left: 2rem;
+      width: unset;
+   }
+}
+
+/** APARTADO DE ACERCA DE MI*/
+
+.img1{
+   box-shadow: 10px 5px 5px black;
+   width: 500px;
+   height: 300px;
+}
+
+.home{
+   color: white;
+   height: 100vh;
+   display: flex;
+   align-items: center;
+   padding: 0 10%;
+}
+
+.home-content{
+   max-width: 600px;
+}
+
+.home-content h1 {
+   font-size: 56px;
+   font-weight: 700px;
+   text-shadow: 10px 10px 5px black;
+}
+
+.home-content h3 {
+   font-size: 32px;
+   font-weight: 700px;
+   color: #00abf0;
+}
+
+.home-content p {
+   font-size: 16px;
+   margin: 20px 0 40px;
+}
+
+.home-sci{
+   position: absolute;
+   bottom: 40px;
+   width: 170px;
+   display: flex;
+   justify-content: space-between;
+}
+
+.home-sci a {
+   position: relative;
+   display: inline-flex;
+   justify-content: center;
+   align-items: center;
+   width: 40px;
+   height: 40px;
+   background: transparent;
+   border: 2px solid #00abf0;
+   border-radius: 50%;
+   font-size: 20px;
+   color: #00abf0;
+   text-decoration: none;
+   z-index: 1;
+   overflow: hidden;
+   transition: .5s;
+}
+
+.home-sci a:hover {
+   color: #081b29;
+}
+
+.home-sci a::before {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 0;
+   height: 100%;
+   background-color: #00abf0;
+   z-index: -1;
+   transition: .5s;
+}
+
+.home-sci a:hover::before {
+   width: 100%;
+}
+
+@media (max-width: 1230px){
+   .img1{
+      visibility: hidden;
+   }
+}
+
+/** Pagina de Proyectos*/
+
+.box-center{
+   width: 80%;
+   margin: auto; 
+   padding: 25px;
+}
+
+.seccion-card{
+   display: flex; 
+   justify-content: space-around;
+   flex-flow: row wrap; 
+}
+
+.card{
+   width: 30%;
+   height: 300%;
+   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+   margin-bottom: 30px;
+   background-size: cover; 
+   background-position: center; 
+}
+
+
+.seccion-card img{
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   transition: all .5s;
+}
+
+.seccion-card img:hover{
+   transform: scale(1.1);
+}
+
+.text_style{
+   color: #000;
+
+}
+
+@media (max-width: 550px){
+   .card{
+       width: 160px;
+   }
+}
+
+@media (max-width: 996px){
+   .card{
+      width: 230px;
+   }
+}
+
+/** Apartado de Contacto*/
+ 
+.git{
+   width: 195px !important;
+}
+ 
